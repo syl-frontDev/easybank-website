@@ -1,0 +1,148 @@
+.footer {
+    color: $white;
+    background-color: $darkBlue;
+    padding: 2.5rem;
+    text-align: center;
+
+
+    .container {
+        @include breakpoint-up(large) {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 3fr;
+            grid-template-rows: 1fr auto;
+            gap: 1rem;
+            grid-template-areas:
+                // The names below are used to place the elements
+                // in the appropriate layout
+                "logo links1 links2 cta"
+                "social links1 links2 copyright";
+
+            justify-items: start;
+        }
+    }
+
+
+
+    a {
+        color: $white;
+    }
+
+    &__logo {
+
+        // I needed to add the display to "inline-block" 
+        // because the "a" tag by default is an inline 
+        // element so the "margin bottom" won't work 
+        // unless it's display is changed to "inline-block"
+
+        display: inline-block;
+
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+        }
+
+        // img {
+        //     margin-bottom: 1.875rem;
+        // }
+
+        @include breakpoint-up(large) {
+            grid-area: logo;
+        }
+
+    }
+
+    &__social {
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+        }
+
+        @include breakpoint-up(large) {
+            grid-area: social;
+            align-self: end;
+            justify-self: start;
+        }
+
+        a {
+            display: inline-block; // same reason as above "footer__logo"
+            height: 1.25rem;
+        }
+
+        a:not(:last-child) {
+            // i'm using the not last-child because i don't need the right margin on the last element
+            margin-right: 1rem;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.9375rem;
+
+
+
+        @include breakpoint-up(large) {
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        &.col_1 {
+
+            @include breakpoint-up(large) {
+                grid-area: links1;
+            }
+        }
+
+        &.col_2 {
+
+            @include breakpoint-down(medium) {
+                margin-bottom: 1.875rem;
+            }
+
+            @include breakpoint-up(large) {
+                grid-area: links2;
+            }
+        }
+
+        a {
+            color: $grayishBlue;
+            line-height: 2.25;
+            transition: color 0.15s ease-in-out;
+
+            &:hover {
+                color: $limeGreen;
+            }
+
+
+        }
+    }
+
+    &__cta {
+
+        @include breakpoint-up(large) {
+            grid-area: cta;
+            text-align: right;
+            justify-self: end;
+        }
+
+        a.button {
+
+            @include breakpoint-down(medium) {
+                margin-bottom: 1.875rem;
+            }
+        }
+    }
+
+
+    &__copyright {
+        font-size: 0.825rem;
+        color: $grayishBlue;
+
+        @include breakpoint-up(large) {
+            grid-area: copyright;
+            align-self: end;
+            justify-self: end;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+// Main scss file that'll have all our scss files
+
+// Functional styles
+@import "variables";
+@import "mixins";
+@import "animations";
+
+// Component styles
+@import "globals";
+@import "header";
+@import "hero";
+@import "feature";
+@import "article";
+@import "footer";
