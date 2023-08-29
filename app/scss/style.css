@@ -38,6 +38,44 @@
   animation: fade-out 0.2s ease-in-out forwards;
 }
 
+.about {
+  background-color: hsl(233, 26%, 24%);
+  padding: 4.375rem 0;
+}
+.about h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.5625rem;
+  color: hsl(0, 0%, 98%);
+}
+.about p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 98%);
+}
+
+.contact {
+  background-color: hsl(0, 0%, 100%);
+  padding: 4.375rem 0;
+}
+.contact h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.5625rem;
+  color: hsl(233, 26%, 24%);
+}
+.contact h3 {
+  margin: 0;
+  font-weight: 600;
+}
+.contact h6 {
+  font-size: 0.8rem;
+  margin: 0;
+}
+.contact p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: hsl(233, 26%, 24%);
+}
+
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -203,6 +241,12 @@ a:hover {
   }
 }
 
+.header {
+  background-color: hsl(0, 0%, 100%);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 .header.open .header__toggle > span:first-child {
   transform: rotate(45deg);
 }
@@ -223,7 +267,6 @@ a:hover {
 }
 .header nav {
   position: relative;
-  background-color: hsl(0, 0%, 100%);
   padding-top: 1.0625rem;
   padding-bottom: 1.0625rem;
 }
